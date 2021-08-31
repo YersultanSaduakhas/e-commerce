@@ -37,7 +37,7 @@ export default {
       },
         {
             type: 'text/javascript',
-            src: 'js/bootstap.min.js',
+            src: 'js/bootstrap.min.js',
             body: true
         },
         {
