@@ -13,7 +13,8 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { href:'http://fonts.googleapis.com/css?family=Lato:300,400,700,900', rel:'stylesheet', type:'text/css' },
+      { href:'http://fonts.googleapis.com/css?family=Lato:300,400,700,900', 
+      rel:'stylesheet', type:'text/css' },
       { rel: 'stylesheet', href: 'css/bootstrap.min.css' },
       { rel: 'stylesheet', href: 'css/animate.css' },
       { rel: 'stylesheet', href: 'css/font-awesome.min.css' },
