@@ -13,7 +13,59 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      {
+          type: 'text/javascript',
+          src: 'js/jquery.min.js',
+          body: true
+      },
+        {
+            type: 'text/javascript',
+            src: 'js/bootstap.min.js',
+            body: true
+        },
+        {
+          type: 'text/javascript',
+          src: 'js/owl.carousel.min.js',
+          body: true
+      },
+      {
+          type: 'text/javascript',
+          src: 'js/jquery.bxslider.js',
+          body: true
+      },
+      {
+        type: 'text/javascript',
+        src: 'js/revolution-slider.js',
+        body: true
+    },
+    {
+        type: 'text/javascript',
+        src: 'js/megamenu.js',
+        body: true
+    },
+    {
+      type: 'text/javascript',
+      src: 'js/mobile-menu.js',
+      body: true
+  },
+  {
+      type: 'text/javascript',
+      src: 'js/jquery-ui.js',
+      body: true
+  },
+  {
+      type: 'text/javascript',
+      src: 'js/main.js',
+      body: true
+  },
+  {
+      type: 'text/javascript',
+      src: 'js/countdown.js',
+      body: true
+  }
+    ] 
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -36,7 +88,7 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/bootstrap
-    'bootstrap-vue/nuxt',
+    // 'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
