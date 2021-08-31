@@ -12,7 +12,21 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href:'http://fonts.googleapis.com/css?family=Lato:300,400,700,900', rel:'stylesheet', type:'text/css' },
+      { rel: 'stylesheet', href: 'css/bootstrap.min.css' },
+      { rel: 'stylesheet', href: 'css/animate.css' },
+      { rel: 'stylesheet', href: 'css/font-awesome.min.css' },
+      { rel: 'stylesheet', href: 'css/simple-line-icons.css' },
+      { rel: 'stylesheet', href: 'css/owl.carousel.css' },
+      { rel: 'stylesheet', href: 'css/owl.transitions.css' },
+      { rel: 'stylesheet', href: 'css/flexslider.css' },
+      { rel: 'stylesheet', href: 'css/jquery-ui.css' },
+      { rel: 'stylesheet', href: 'css/revolution-slider.css' },
+      { rel: 'stylesheet', href: 'css/quick_view_popup.css' },
+      { rel: 'stylesheet', href: 'css/blog.css' },
+      { rel: 'stylesheet', href: 'css/style.css' },
+      { rel: 'stylesheet', href: 'css/responsive.css'}
     ],
     script: [
       {
