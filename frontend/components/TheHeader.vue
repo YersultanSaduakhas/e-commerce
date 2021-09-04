@@ -8,7 +8,7 @@
             <div class="col-lg-4 col-sm-4 col-md-5 hidden-xs">
               <!-- Default Welcome Message -->
               <div class="welcome-msg ">
-                Welcome to Genius!
+                {{ $t('welcome') }} to Genius!
               </div>
               <span class="phone hidden-sm">Call Us: +123.456.789</span>
             </div>
@@ -26,22 +26,18 @@
                   <a title="Blog" href="blog.html"><i class="fa fa-rss" /><span class="hidden-xs">Blog</span></a>
                 </div>
                 <div class="login">
-                  <a href="account_page.html"><i class="fa fa-unlock-alt" /><span class="hidden-xs">Log In</span></a>
+                  <a href="account_page.html"><i class="fa fa-unlock-alt" /><span class="hidden-xs">{{ $t('log_in') }}</span></a>
                 </div>
               </div>
               <div class="language-currency-wrapper">
                 <div class="inner-cl">
                   <div class="block block-language form-language">
                     <div class="lg-cur">
-                      <span> <img src="images/flag-default.jpg" alt="French"> <span class="lg-fr">French</span> <i class="fa fa-angle-down" /> </span>
+                      <span> <img src="images/flag-kz.jpg" alt="kz"> <span class="lg-fr">Қазақ</span> <i class="fa fa-angle-down" /> </span>
                     </div>
                     <ul>
-                      <li> <a class="selected" href="#"> <img src="images/flag-english.jpg" alt="flag"> <span>English</span> </a> </li>
-                      <li> <a href="#"> <img src="images/flag-default.jpg" alt="flag"> <span>French</span> </a> </li>
-                      <li> <a href="#"> <img src="images/flag-german.jpg" alt="flag"> <span>German</span> </a> </li>
-                      <li> <a href="#"> <img src="images/flag-brazil.jpg" alt="flag"> <span>Brazil</span> </a> </li>
-                      <li> <a href="#"> <img src="images/flag-chile.jpg" alt="flag"> <span>Chile</span> </a> </li>
-                      <li> <a href="#"> <img src="images/flag-spain.jpg" alt="flag"> <span>Spain</span> </a> </li>
+                      <li> <a class="selected" @click="switchLocalePath('kz')"> <img src="images/flag-kz.jpg" alt="flag"> <span>Қазақ</span> </a> </li>
+                      <li> <a @click="switchLocalePath('ru')"> <img src="images/flag-default.jpg" alt="flag"> <span>Русский</span> </a> </li>
                     </ul>
                   </div>
                   <div class="block block-currency">
@@ -173,3 +169,18 @@
   </header>
   <!-- end header -->
 </template>
+<script>
+export default {
+  data () {
+    return {
+      drawer: false
+    }
+  },
+  methods: {
+    switchLocalePath (lang) {
+      this.$root.context.app.i18n.setLocale(lang)
+      this.$root.context.app.switchLocalePath(lang)
+    }
+  }
+}
+</script>

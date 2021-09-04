@@ -96,8 +96,10 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module'
+      // https://go.nuxtjs.dev/eslint
+      ['@nuxtjs/eslint-module', {
+        fix: true
+      }],
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -107,7 +109,26 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    ['nuxt-i18n', {
+      strategy: 'no_prefix',
+      locales: [
+        {
+          name: 'kz',
+          code: 'kz',
+          iso: 'kz-KZ',
+          file: 'kz.js'
+        },
+        {
+          name: 'ru',
+          code: 'ru',
+          iso: 'ru-RU',
+          file: 'ru.js'
+        }
+      ],
+      langDir: 'lang/',
+      defaultLocale: 'kz'
+    }]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
