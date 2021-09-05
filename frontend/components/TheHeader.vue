@@ -10,20 +10,21 @@
               <div class="welcome-msg ">
                 {{ $t('welcome') }} to Genius!
               </div>
-              <span class="phone hidden-sm">Call Us: +123.456.789</span>
+
+              <span class="phone hidden-sm"> {{ $t('Call_Us') }}: +123.456.789</span>
             </div>
 
             <!-- top links -->
             <div class="headerlinkmenu col-lg-8 col-md-7 col-sm-8 col-xs-12">
               <div class="links">
                 <div class="myaccount">
-                  <a title="My Account" href="account_page.html"><i class="fa fa-user" /><span class="hidden-xs">My Account</span></a>
+                  <a title="My Account" href="account_page.html"><i class="fa fa-user" /><span class="hidden-xs">{{ $t('My_Account') }}</span></a>
                 </div>
                 <div class="wishlist">
-                  <a title="My Wishlist" href="wishlist.html"><i class="fa fa-heart" /><span class="hidden-xs">Wishlist</span></a>
+                  <a title="My Wishlist" href="wishlist.html"><i class="fa fa-heart" /><span class="hidden-xs">{{ $t('Wishlist') }}</span></a>
                 </div>
                 <div class="blog">
-                  <a title="Blog" href="blog.html"><i class="fa fa-rss" /><span class="hidden-xs">Blog</span></a>
+                  <a title="Blog" href="blog.html"><i class="fa fa-rss" /><span class="hidden-xs">{{ $t('Blog') }}</span></a>
                 </div>
                 <div class="login">
                   <a href="account_page.html"><i class="fa fa-unlock-alt" /><span class="hidden-xs">{{ $t('log_in') }}</span></a>
@@ -37,7 +38,7 @@
                     </div>
                     <ul>
                       <li> <a class="selected" @click="switchLocalePath('kz')"> <img src="images/flag-kz.jpg" alt="flag"> <span>Қазақ</span> </a> </li>
-                      <li> <a @click="switchLocalePath('ru')"> <img src="images/flag-default.jpg" alt="flag"> <span>Русский</span> </a> </li>
+                      <li> <a class="selected" @click="switchLocalePath('ru')"> <img src="images/flag-ru.jpg" alt="flag"> <span>Русский</span> </a> </li>
                     </ul>
                   </div>
                   <div class="block block-currency">
@@ -179,7 +180,6 @@ export default {
   methods: {
     switchLocalePath (lang) {
       this.$root.context.app.i18n.setLocale(lang)
-      this.$root.context.app.switchLocalePath(lang)
     }
   }
 }
