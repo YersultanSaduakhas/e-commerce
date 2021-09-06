@@ -117,17 +117,23 @@ export default {
           name: 'kz',
           code: 'kz',
           iso: 'kz-KZ',
-          file: 'kz.js'
+          file: 'kz.js',
+          title: 'Қаз',
+          titleLong: 'Қазақша'
         },
         {
           name: 'ru',
           code: 'ru',
           iso: 'ru-RU',
-          file: 'ru.js'
+          file: 'ru.js',
+          title: 'Рус',
+          titleLong: 'Русский'
         }
       ],
       langDir: 'lang/',
-      defaultLocale: 'kz'
+      defaultLocale: 'kz',
+      defaultLocaleTitle: 'Қаз',
+      defaultLocaleTitleLong: 'Қазақша'
     }]
   ],
 

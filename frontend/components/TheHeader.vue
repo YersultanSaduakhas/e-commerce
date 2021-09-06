@@ -8,23 +8,23 @@
             <div class="col-lg-4 col-sm-4 col-md-5 hidden-xs">
               <!-- Default Welcome Message -->
               <div class="welcome-msg ">
-                {{ $t('welcome') }} to Genius!
+                {{ $t('welcome') }}!
               </div>
 
-              <span class="phone hidden-sm"> {{ $t('Call_Us') }}: +123.456.789</span>
+              <span class="phone hidden-sm">{{ $t('call_us') }}: +123.456.789</span>
             </div>
 
             <!-- top links -->
             <div class="headerlinkmenu col-lg-8 col-md-7 col-sm-8 col-xs-12">
               <div class="links">
                 <div class="myaccount">
-                  <a title="My Account" href="account_page.html"><i class="fa fa-user" /><span class="hidden-xs">{{ $t('My_Account') }}</span></a>
+                  <a title="My Account" href="account_page.html"><i class="fa fa-user" /><span class="hidden-xs">{{ $t('my_account') }}</span></a>
                 </div>
                 <div class="wishlist">
-                  <a title="My Wishlist" href="wishlist.html"><i class="fa fa-heart" /><span class="hidden-xs">{{ $t('Wishlist') }}</span></a>
+                  <a title="My Wishlist" href="wishlist.html"><i class="fa fa-heart" /><span class="hidden-xs">{{ $t('wishlist') }}</span></a>
                 </div>
                 <div class="blog">
-                  <a title="Blog" href="blog.html"><i class="fa fa-rss" /><span class="hidden-xs">{{ $t('Blog') }}</span></a>
+                  <a title="Blog" href="blog.html"><i class="fa fa-rss" /><span class="hidden-xs">{{ $t('blog') }}</span></a>
                 </div>
                 <div class="login">
                   <a href="account_page.html"><i class="fa fa-unlock-alt" /><span class="hidden-xs">{{ $t('log_in') }}</span></a>
@@ -34,11 +34,12 @@
                 <div class="inner-cl">
                   <div class="block block-language form-language">
                     <div class="lg-cur">
-                      <span> <img src="images/flag-kz.jpg" alt="kz"> <span class="lg-fr">Қазақ</span> <i class="fa fa-angle-down" /> </span>
+                      <span> <img :src="'images/flag-'+currentLocale.code+'.jpg'" :alt="currentLocale.code"> <span class="lg-fr">{{ currentLocale.title }}</span><i class="fa fa-angle-down" /></span>
                     </div>
                     <ul>
-                      <li> <a class="selected" @click="switchLocalePath('kz')"> <img src="images/flag-kz.jpg" alt="flag"> <span>Қазақ</span> </a> </li>
-                      <li> <a class="selected" @click="switchLocalePath('ru')"> <img src="images/flag-ru.jpg" alt="flag"> <span>Русский</span> </a> </li>
+                      <li v-for="(locale_,ind) in $root.context.app.i18n.locales" :key="ind">
+                        <a :class="{'selected':currentLocale==locale_.code}" @click="switchLocalePath(locale_)"> <img :src="'images/flag-'+locale_.code+'.jpg'" alt="flag"> <span>{{ locale_.titleLong }}</span> </a>
+                      </li>
                     </ul>
                   </div>
                   <div class="block block-currency">
@@ -174,12 +175,24 @@
 export default {
   data () {
     return {
-      drawer: false
+      drawer: false,
+      currentLocale: {
+        code: this.$root.context.app.i18n.defaultLocale,
+        title: this.$root.context.app.i18n.defaultLocaleTitle,
+        titleLong: this.$root.context.app.i18n.defaultLocaleTitleLong
+      },
+      currentCurrency: {
+
+      },
+      currencies: [
+        { key: 'usd', title: 'USD', sign: '$' }
+      ]
     }
   },
   methods: {
-    switchLocalePath (lang) {
-      this.$root.context.app.i18n.setLocale(lang)
+    switchLocalePath (locale) {
+      this.$root.context.app.i18n.setLocale(locale.code)
+      this.currentLocale = locale
     }
   }
 }
